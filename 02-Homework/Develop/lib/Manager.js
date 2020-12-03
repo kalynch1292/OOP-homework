@@ -1,1 +1,22 @@
-// TODO: Write code to define and export the Manager class. HINT: This class should inherit from Employee.
+module.exports = Manager
+class Employee{
+    constructor(name,id,email){
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.title = "Employee";
+    }
+    getEmail(){
+        return this.email
+    }
+    getName(){
+        return this.name
+    }
+    getRole(){
+        return this.title;
+    }
+    getId(){
+        return this.id;
+    }
+}
+module.exports = Employee;
