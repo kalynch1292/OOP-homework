@@ -10,39 +10,102 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const workerArray = [];
 
 
-const questions = [
+const managerQuestions = [
+
     {
-        type: "input",
-        message: "Enter your first name:",
-        name: "name"
-    }, {
-        type: "input",
-        message: "Enter your email address:",
-        name: "email"
-    }, {
-        type: "input",
-        message: "What's your role within the company?",
-        name: "role",
-        choices: ['engineer', 'intern', 'manager']
+        type: 'input',
+        name: 'managerName',
+        message: 'Managers name '
     },
+
     {
-        type: "input",
-        message: "Enter your github username:",
-        name: "username"
-    },];
+        type: 'input',
+        name: 'managerID',
+        message: 'Manager ID number'
+    },
 
-inquirer
-    .prompt(questions)
-    .then(answers => {
-        projectName = answers.name;
-        projectEmail = answers.email;
-        projectRole = answers.role;
-        projectUsername = answers.username
+    {
+        type: 'input',
+        name: 'managerEmail',
+        message: 'Managers Email'
+    },
 
+    {
+        type: 'input',
+        name: 'office',
+        message: 'Managers office number'
+    },
+]
 
+const engineerQuestions = [
+
+    {
+        type: 'input',
+        name: 'engiName',
+        message: 'Engineers name'
+    },
+
+    {
+        type: 'input',
+        name: 'engiID',
+        message: 'Engineers ID number'
+    },
+
+    {
+        type: 'input',
+        name: 'engiEmail',
+        message: 'Engineers email adress'
+    },
+
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Engineers GitHub user name'
+    },
+]
+
+const internQuestions = [
+
+    {
+        type: 'input',
+        name: 'internName',
+        message: 'Intern Name'
+    },
+
+    {
+        type: 'input',
+        name: 'internID',
+        message: 'Intern ID',
+    },
+
+    {
+        type: 'input',
+        name: 'internEmail',
+        message: 'Intern Email'
+    },
+
+    {
+        type: 'input',
+        name: 'school',
+        message: 'intern School',
+    },
+]
+
+//add another employee
+
+const anotherEmp = [
+    {
+        type: 'list',
+        name: 'nextEmployee',
+        message: 'Select the type of team member you would like to add next, if you are done select "Done" to generate your team ',
+        choices: ['Engineer', 'Intern', 'Done']
     }
+]
+
+
 
 
 // Write code to use inquirer to gather information about the development team members,
