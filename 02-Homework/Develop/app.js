@@ -14,7 +14,6 @@ const workerArray = [];
 
 
 const managerQuestions = [
-
     {
         type: 'input',
         name: 'managerName',
@@ -104,7 +103,10 @@ const anotherEmp = [
         choices: ['Engineer', 'Intern', 'Done']
     }
 ]
-
+inquirer
+    .prompt([
+        
+    ])
 
 
 
